@@ -1,7 +1,7 @@
 <?php
+
 namespace App\Livewire\Contact\Forms;
 
-use App\Enums\OrganizationStatus;
 use App\Models\Contact;
 use App\Models\Organisation;
 
@@ -57,17 +57,15 @@ class CreateForm extends Form
         ]);
 
         $organisation->contacts()->create([
-            'prenom' => ucwords($this->prenom),
-            'nom' => ucwords($this->nom),
-            'e_mail' => strtolower($this->email),
+            'prenom' => $this->prenom,
+            'nom' => $this->nom,
+            'e_mail' => $this->email,
             'organisation_id' => $organisation->id,
         ]);
 
         $this->reset();
 
         $this->dispatch('contact.list.reload', __('Contact Ajoute avec succès.'));
-
-
     }
 
     public function confirmDuplicateContact()

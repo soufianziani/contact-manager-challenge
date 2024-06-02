@@ -17,9 +17,9 @@ class EditForm extends Form
         $contact = Contact::findOrFail($this->id);
 
         $contact->update([
-            'prenom' => ucwords($this->prenom),
-            'nom' => ucwords($this->nom),
-            'e_mail' => strtolower($this->email),
+            'prenom' => $this->prenom,
+            'nom' => $this->nom,
+            'e_mail' => $this->email,
         ]);
 
         $contact->organisation()->update([

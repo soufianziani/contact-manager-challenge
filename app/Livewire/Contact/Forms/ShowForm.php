@@ -10,11 +10,6 @@ class ShowForm extends Form
         'showShowContactModal' => 'show',
     ];
 
-    public function save()
-    {
-        //
-    }
-
     public function show($id)
     {
         $this->readOnly = true;
@@ -29,6 +24,11 @@ class ShowForm extends Form
         $this->code_postal = $contact->organisation->code_postal ?? '';
         $this->statut = $contact->organisation->statut ?? '';
         $this->show = true;
+    }
+
+    public function save()
+    {
+        //
     }
 
     public function render()
