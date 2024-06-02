@@ -27,18 +27,16 @@ class Contact extends Model
 
     public function scopeSearch($query, $search)
     {
-        if (! $search) {
+        if (!$search) {
             return $query;
         }
 
         $search = "%" . $search . "%";
 
-        return $query->where(fn ($query) =>
-            $query->where('nom', 'like', $search)
-                ->orWhere('prenom', 'like', $search)
-                ->orWhereHas('organisation', fn ($query) =>
-                    $query->where('nom', 'like', $search)
-                )
+        return $query->where(fn($query) => $query->where('nom', 'like', $search)
+            ->orWhere('prenom', 'like', $search)
+            ->orWhereHas('organisation', fn($query) => $query->where('nom', 'like', $search)
+            )
         );
     }
 
@@ -64,7 +62,7 @@ class Contact extends Model
             get: fn($value) => $this->prenom . ' ' . $this->nom,
         );
     }
-    
+
 
     protected function eMail(): Attribute
     {

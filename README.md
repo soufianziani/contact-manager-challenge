@@ -28,6 +28,16 @@ This Contact Management System is built using Laravel, Livewire, and Tailwind CS
     <img src="/screenshots/create.png" width="100%" alt="Create Contact Modal">
 </p>
 
+### Contact dupliquée Modal 
+<p align="center">
+    <img src="/screenshots/contact-dupliquée.png" width="100%" alt="Create Contact Modal">
+</p>
+
+### Entreprise dupliquée Modal
+<p align="center">
+    <img src="/screenshots/entreprise-dupliquée.png" width="100%" alt="Create Contact Modal">
+</p>
+
 ### Update Contact Modal
 <p align="center">
     <img src="/screenshots/update.png" width="100%" alt="Update Contact Modal">

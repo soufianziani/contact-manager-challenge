@@ -27,8 +27,8 @@ class CreateForm extends Form
 
         if (! $this->forceCreateContact) {
             $existingContact = Contact::query()
-                ->where('prenom', ucwords($this->prenom))
-                ->where('nom', ucwords($this->nom))
+                ->where('prenom', strtolower($this->prenom))
+                ->where('nom', strtolower($this->nom))
                 ->exists();
 
             if ($existingContact) {
@@ -39,7 +39,7 @@ class CreateForm extends Form
 
         if (! $this->forceCreateOrganization) {
             $existingOrganization = Organisation::query()
-                ->where('nom', $this->entreprise)
+                ->where('nom', strtolower($this->entreprise))
                 ->exists();
 
             if ($existingOrganization) {
